@@ -15,6 +15,6 @@
             tools:background="@color/colorPrimary">
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  tools:text="@{eventModel.name}"/>
+                  tools:text="@{eventModel.title}"/>
     </FrameLayout>
 </layout>
