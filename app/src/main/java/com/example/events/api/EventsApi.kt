@@ -1,5 +1,6 @@
 package com.example.events.api
 
+import com.example.events.models.CheckinModel
 import com.example.events.models.EventModel
 import retrofit2.Call
 import retrofit2.http.Body
@@ -15,5 +16,5 @@ interface EventsApi {
     fun getEventById(@Path("idEvent") idEvent: String): Call<EventModel>
 
     @POST("checkin")
-    fun checkin(@Body eventModel: EventModel): Call<EventModel>
+    fun checkin(@Body checkinModel: CheckinModel): Call<CheckinModel>
 }

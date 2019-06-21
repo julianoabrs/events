@@ -7,22 +7,34 @@
         <variable
                 name="eventModel"
                 type="com.example.events.models.EventModel"/>
+        <variable
+                name="fragment"
+                type="com.example.events.ui.details.DetailsFragment"/>
     </data>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView android:id="@+id/txtName"
-                  tools:text="@{eventModel.title}"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"/>
-        <TextView android:id="@+id/txtDescription"
-                  tools:text="@{eventModel.description}"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"/>
-        <Button android:id="@+id/btnCheckin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-    </LinearLayout>
+            <TextView android:id="@+id/txtName"
+                      tools:text="@{eventModel.title}"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textSize="18sp"
+                      android:textStyle="bold"
+                      android:layout_marginBottom="16sp"/>
+            <TextView android:id="@+id/txtDescription"
+                      tools:text="@{eventModel.description}"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+            <Button android:id="@+id/btnCheckin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkin"
+                    android:textSize="20sp"
+                    android:onClick="@{() -> fragment.openCheckinDialog()}"/>
+        </LinearLayout>
+    </ScrollView>
 </layout>

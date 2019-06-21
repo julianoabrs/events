@@ -51,10 +51,12 @@ class HomeFragment : Fragment() {
         })
 
         viewModelHome.getError().observe(this, Observer<Boolean> {
-            txtError.visibility = View.VISIBLE
-            recyclerView.visibility = View.GONE
+            if (it) {
+                txtError.visibility = View.VISIBLE
+                recyclerView.visibility = View.GONE
 
-            txtError.text = context?.getText(R.string.error)
+                txtError.text = context?.getText(R.string.error)
+            }
         })
 
         viewModelHome.loadEvents()
